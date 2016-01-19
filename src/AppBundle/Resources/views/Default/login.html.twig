@@ -1,0 +1,57 @@
+{% extends 'AppBundle::layoutForm.html.twig' %}
+
+    {% block title %}
+        easy-commerce login
+    {% endblock %}
+
+    {% block titulo %}
+        Formulario LogIn
+    {% endblock %}
+
+    {% block formulario %}
+        <form id="loginForm" action="{{ path("appBundle_login_check") }}" method="post">
+
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
+                class="form-control" placeholder="Nombre de usuario"/>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-lock"></i>
+                </span>
+                <input type="password" id="password" name="_password" required="required"
+                class="form-control" placeholder="Escriba su contraseña"/>
+            </div>
+
+            <hr>
+
+            <div class="input-group">
+                <a href="">Has olvidado tu contraseña?</a>
+            </div>
+
+            <div class="input-group">
+                No tienes una tienda?
+                <a href="{{ path('appBundle_registro') }}">Regístrate</a>
+            </div>
+
+            <hr>
+
+            <div class="col-xs-12">
+                <input type="submit" class="btn btn-lg btn-success btn-block" name="_entrar" value="Entrar" />
+            </div>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        </form>
+
+    {% endblock %}
+
+    {% block menssage %}
+        {% if error | default(false) %}
+            <div class="alert alert-danger">{{ error.message }}</div>
+        {% endif %}
+    {% endblock %}

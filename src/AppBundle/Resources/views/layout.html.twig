@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block stylesheets %}
+
+    <link href="{{ asset('bundles/estilos/css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/shop-homepage.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/font-awesome.min.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/sb-admin.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/morris.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/estilo.css') }}" type="text/css" rel="stylesheet" />
+
+{% endblock %}
+
+{% block body %}
+
+    {% block nav %}
+
+    {% endblock %}
+
+    {% block contenido %}
+
+    {% endblock %}
+
+    {% include 'AppBundle:Comunes:footer.html.twig' %}
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <!-- jQuery -->
+    <script src="{{ asset('bundles/estilos/js/jquery.js') }}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('bundles/estilos/js/bootstrap.min.js') }}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+{% endblock %}

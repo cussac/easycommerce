@@ -1,0 +1,25 @@
+appBundle_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+appBundle_login:
+    path:    /login
+    defaults: { _controller: AppBundle:User:login }
+
+appBundle_login_check:
+    path:    /login_check
+
+appBundle_logout:
+    path:    /logout
+
+appBundle_registro:
+    path:    /registro/{id}
+    defaults: { _controller: AppBundle:User:registro, id:-1 }
+    requirements:
+        id: \d+
+
+#ruta area privada#
+
+appBundle_admin_homepage:
+    path:     /admin/
+    defaults: { _controller: AppBundle:Default:adminIndex }

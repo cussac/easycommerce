@@ -1,0 +1,71 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block stylesheets %}
+
+    <link href="{{ asset('bundles/estilos/css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/shop-homepage.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/font-awesome.min.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/estilos/css/estilo.css') }}" type="text/css" rel="stylesheet" />
+
+{% endblock %}
+
+{% block body %}
+
+    {% block nav %}
+        {% include 'AppBundle:Comunes:navSimple.html.twig' %}
+    {% endblock %}
+
+    <div class="container-login">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 toppad" >
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">
+                            {% block titulo %}
+                            {% endblock %}
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="row">
+
+                            <div class="col-md-6 col-md-offset-3 login-box">
+                                {% block formulario %}
+                                {% endblock %}
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <div class="row">
+                            {% block menssage %}
+                                {% include 'AppBundle:Comunes:flashMessage.html.twig' %}
+                            {% endblock %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'AppBundle:Comunes:footer.html.twig' %}
+
+{% endblock %}
+
+    {% block javascripts %}
+
+        <!-- jQuery -->
+        <script src="{{ asset('bundles/estilos/js/jquery.js') }}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset('bundles/estilos/js/bootstrap.min.js') }}"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    {% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'AppBundle::layoutForm.html.twig' %}
+
+    {% block title %}
+        easy-commerce registro
+    {% endblock %}
+
+    {% block titulo %}
+        Formulario Registro
+    {% endblock %}
+
+    {% block formulario %}
+        <form id="registerForm"  action="" method="post" {{ form_enctype(form) }}>
+
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                {{ form_row(form.nombre) }}
+            </div>
+
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                {{ form_row(form.apellido1) }}
+            </div>
+
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                {{ form_row(form.apellido2) }}
+            </div>
+
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                    </span>
+                {{ form_row(form.email) }}
+            </div>
+
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                {{ form_row(form.username) }}
+            </div>
+
+            <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-eye-close"></i>
+                    </span>
+                {{ form_row(form.password) }}
+            </div>
+
+            <hr class="colorgraph">
+            <br>
+
+            <p>*Todos los datos introducidos en este formulario serán tratados con estricta privacidad y de acuerdo con la normativa legal vigente en materia de protección de datos.</p>
+            <label for="checkbox_id">{{ form_row(form.terms) }}</label> {{ form_label(form.terms, 'Acepto') }}
+
+            <hr class="colorgraph">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <input type='submit' class='btn btn-lg btn-success btn-block ' name='_registrar' value='Registrarme'>
+                </div>
+            </div>
+
+            {{ form_rest(form) }}
+        </form>
+
+    {% endblock %}
